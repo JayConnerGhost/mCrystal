@@ -3,8 +3,9 @@ import { render } from 'react-dom';
 
 
 import { Meteor } from 'meteor/meteor';
+import { BrowserRouter } from 'react-router-dom';
 
-
+import { Link, Route, Switch } from 'react-router-dom';
 
 import App from '../imports/ui/App.js';
 
@@ -12,7 +13,11 @@ import App from '../imports/ui/App.js';
 
 Meteor.startup(() => {
 
-  render(<App />, document.getElementById('render-target'));
+  render(
+<BrowserRouter>
+  <App />
+  </BrowserRouter>
+  , document.getElementById('render-target'));
 
 });
 
