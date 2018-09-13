@@ -1,2 +1,0 @@
-# mCrystal
-meteor - learning project
