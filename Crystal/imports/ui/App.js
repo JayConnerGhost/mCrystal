@@ -7,7 +7,7 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import Accounts from './accounts';
-import Buildings from './Buildings';
+import NewBuildings from './NewBuildings';
 
 
 class frame extends Component{
@@ -60,12 +60,14 @@ class frame extends Component{
                 </div>
             </nav>
             <div>
+            <Switch>
                    <Route exact={true} path="/" component={Home}/>
                    <Route exact={true} path="/about" component={About}/>
                    <Route exact={true} path="/contact" component={Contact}/>
-                   <Route exect={true} path="/buildings" component={Buildings}/>
-                   <Route exect={true} path="/buildings/new" component={About}/>
-
+                   <Route exect={true} path="/buildings/new" component={NewBuildings}/>
+                
+                 
+            </Switch>
             </div>
 </div>
         );
