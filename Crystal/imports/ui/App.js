@@ -5,14 +5,22 @@ import { BrowserRouter } from 'react-router-dom';
 import { Link, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
+import Contact from './Contact';
+import Accounts from './accounts';
+import Buildings from './Buildings';
+
+
 class frame extends Component{
         
     buildNavItems(){
         return (
             [
-                {_id:1, name:'Home',urlPart:'/'},
-                {_id:2, name:'Contact',urlPart:'/contact'},
-                {_id:3, name:'About',urlPart:'/about'}
+                {_id:1, name:'Home',urlPart:'/',parent:0, children:[]},
+                {_id:2, name:'Buildings',urlPart:'/buildings',parent:0,
+                    children:[ {_id:3, name:'New Building',urlPart:'/buildings/new',parent:2}]
+                },
+                {_id:4, name:'Contact',urlPart:'/contact', parent:0, children:[]},
+                {_id:5, name:'About',urlPart:'/about', parent:0, children:[]}
                
             ]
         );
@@ -24,8 +32,14 @@ class frame extends Component{
 
         return (            
                 this.buildNavItems().map((navItem)=>(
-                  <MenuItem key={navItem._id} id={navItem._id} url={navItem.urlPart} name={navItem.name}/>
-                )));
+                  <MenuItem 
+                  key={navItem._id} 
+                  id={navItem._id} 
+                  url={navItem.urlPart}
+                  name={navItem.name} parent={navItem.parent}
+                  children={navItem.children}
+                   />
+                )));                      
         
     }
 
@@ -40,12 +54,18 @@ class frame extends Component{
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul className="navbar-nav">
                         {this.renderNavItems()}
+                   
+                        <li ><Accounts /></li>  
                     </ul>
                 </div>
             </nav>
             <div>
                    <Route exact={true} path="/" component={Home}/>
                    <Route exact={true} path="/about" component={About}/>
+                   <Route exact={true} path="/contact" component={Contact}/>
+                   <Route exect={true} path="/buildings" component={Buildings}/>
+                   <Route exect={true} path="/buildings/new" component={About}/>
+
             </div>
 </div>
         );
