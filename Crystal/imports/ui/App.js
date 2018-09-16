@@ -8,10 +8,14 @@ import About from './About';
 import Contact from './Contact';
 import Accounts from './accounts';
 import NewBuildings from './NewBuildings';
+import NotFound from './NotFound';
+import Auth from '../hoc/auth'
 
 
 class frame extends Component{
-        
+     
+
+  
     buildNavItems(){
         return (
             [
@@ -43,6 +47,9 @@ class frame extends Component{
         
     }
 
+   
+
+
     render(){
         return(
 <div className="container-fluid">
@@ -64,8 +71,8 @@ class frame extends Component{
                    <Route exact={true} path="/" component={Home}/>
                    <Route exact={true} path="/about" component={About}/>
                    <Route exact={true} path="/contact" component={Contact}/>
-                   <Route exect={true} path="/buildings/new" component={NewBuildings}/>
-                
+                   <Route exect={true} path="/buildings/new" component={Auth(NewBuildings)}/>
+                   <Route component={NotFound}/>
                  
             </Switch>
             </div>
