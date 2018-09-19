@@ -15,7 +15,7 @@ Meteor.methods({
                 county:county,
                 postcode:postcode,
                 occupancy:occupancy,
-                createdBy: this.userIdx
+                createdBy: this.userId
         });
     }
 })

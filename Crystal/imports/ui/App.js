@@ -8,6 +8,7 @@ import About from './About';
 import Contact from './Contact';
 import Accounts from './accounts';
 import NewBuildings from './NewBuildings';
+import ShowBuildings from './ShowBuildings';
 import NotFound from './NotFound';
 import Auth from '../hoc/auth'
 
@@ -21,10 +22,14 @@ class frame extends Component{
             [
                 {_id:1, name:'Home',urlPart:'/',parent:0, children:[]},
                 {_id:2, name:'Buildings',urlPart:'/buildings',parent:0,
-                    children:[ {_id:3, name:'New Building',urlPart:'/buildings/new',parent:2}]
+                    children:[
+                        {_id:3, name:'New Building',urlPart:'/buildings/new',parent:2},
+                        {_id:4, name:'Show Building',urlPart:'/buildings/show',parent:2}
+                        ]
+
                 },
-                {_id:4, name:'Contact',urlPart:'/contact', parent:0, children:[]},
-                {_id:5, name:'About',urlPart:'/about', parent:0, children:[]}
+                {_id:5, name:'Contact',urlPart:'/contact', parent:0, children:[]},
+                {_id:6, name:'About',urlPart:'/about', parent:0, children:[]}
                
             ]
         );
@@ -47,10 +52,7 @@ class frame extends Component{
         
     }
 
-   
-
-
-    render(){
+   render(){
         return(
 <div className="container-fluid">
             <nav className="navbar navbar-expand-md bg-dark navbar-dark">
@@ -72,6 +74,7 @@ class frame extends Component{
                    <Route exact={true} path="/about" component={About}/>
                    <Route exact={true} path="/contact" component={Contact}/>
                    <Route exect={true} path="/buildings/new" component={Auth(NewBuildings)}/>
+                   <Route exect={true} path="/buildings/show" component={Auth(ShowBuildings)}/>
                    <Route component={NotFound}/>
                  
             </Switch>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {AutoForm} from 'uniforms-bootstrap4';
-import BuildingSchema from '../BuildingSchema'
+import NewBuildingFormSchema from '../NewBuildingFormSchema';
+
 
 class NewBuildings extends Component{
     insertBuilding(data)
@@ -14,7 +15,7 @@ class NewBuildings extends Component{
    
     render(){ return(
         <AutoForm
-        schema={BuildingSchema}
+        schema={NewBuildingFormSchema}
         onSubmit={(data) => {
             this.insertBuilding(data);
         }}

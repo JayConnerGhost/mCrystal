@@ -10,7 +10,7 @@ const buildingSchema = new SimpleSchema({
     address1: {
         type: String,
         label: "Address Line 1"
-      
+
     },
     address2: {
         type: String,
@@ -36,18 +36,7 @@ const buildingSchema = new SimpleSchema({
         label: "Max Building Occupancy",
         min: 0
     },
-    createdAt: {
-        type: Date,
-        label: "Date building entered into the system",
-        optional: true
-    },
-    createdByUser: {
-        type: String,
-        max: 20,
-        autoValue: function() {
-            return this.userId;
-        }
-    }
+
 
 });
 
