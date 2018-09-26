@@ -7,18 +7,20 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { Link, Route, Switch } from 'react-router-dom';
 
-import App from '../imports/ui/App.js';
+import App from './App.js';
 
  
 
 Meteor.startup(() => {
-
-  render(
+ 
+   render(
 <BrowserRouter>
   <App />
   </BrowserRouter>
   , document.getElementById('render-target'));
 
 });
+
+
 
 

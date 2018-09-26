@@ -10,7 +10,7 @@ import Accounts from './accounts';
 import NewBuildings from './NewBuildings';
 import ShowBuildings from './ShowBuildings';
 import NotFound from './NotFound';
-import Auth from '../hoc/auth'
+import Auth from '../imports/hoc/auth'
 
 
 class frame extends Component{

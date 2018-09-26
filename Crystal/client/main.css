@@ -1,3 +1,5 @@
+
+
 #login-buttons{
     margin:14px;
     font-size:14px;
@@ -15,3 +17,16 @@ background-color: #fff;
  .accounts-dialog input[type="password"]{
     background-color: #fff;
     }
+
+.card{
+width:400px;
+margin-top:10px;
+margin-left:10px;
+border: 2px solid black;
+box-shadow: 2px 5px #888888;
+}
+
+i{
+    margin: 3px;
+}
+

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {AutoForm} from 'uniforms-bootstrap4';
-import NewBuildingFormSchema from '../NewBuildingFormSchema';
+import NewBuildingFormSchema from '../imports/schema/NewBuildingFormSchema';
 
 
 class NewBuildings extends Component{

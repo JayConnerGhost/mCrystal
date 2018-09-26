@@ -1,5 +1,15 @@
 import { Meteor } from 'meteor/meteor';
-import BuildingCollections from '../imports/collections/Buildings'
+
 Meteor.startup(() => {
-  // code to run on server at startup
+
 });
+
+if (Meteor.isServer) {
+    var buildings = new Mongo.Collection('buildings');
+   
+   Meteor.publish('listAllBuildings', function () {
+    return buildings.find();
+    });
+   }
+
+
