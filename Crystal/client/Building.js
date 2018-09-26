@@ -18,13 +18,12 @@ class Building extends Component{
        <div className="card" onClick={()=>this.BuildingActivate(this.props.buildingId)}>
        <div className="card-image"><i className="fas fa-building fa-3x"></i></div>
            <div><strong>Name: </strong>{this.props.buildingName}</div>
-            <div><strong>Tel:</strong> {this.props.buildingTelephone}</div>          
-            <div><strong>Max Occcupancy:</strong>{this.props.buildingOccupancy}</div>           
+           <div><strong>Max Occcupancy:</strong>{this.props.buildingOccupancy}</div>           
             <div><strong>Address 1: </strong>{this.props.buildingAddress1}</div>
             <div><strong>Address 2:</strong> {this.props.buildingAddress2}</div>        
             <div><strong>Address 3: </strong>{this.props.buildingAddress3}</div>          
             <div><strong>County: </strong>{this.props.buildingCounty}</div>
-            <div><strong>PostCodes: </strong>{this.props.PostCode}</div>  
+            <div><strong>PostCode: </strong>{this.props.buildingPostCode}</div>  
       </div>
    
         );

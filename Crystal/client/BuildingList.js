@@ -13,10 +13,9 @@ class BuildingList extends Component{
                 buildingAddress1={building.address1}
                 buildingAddress2={building.address2}
                 buildingAddress3={building.address3}
-                buildingPostcode={building.PostCode}
-                BuildingOccupancy={building.Occuancy}
-                BuildingTelephone={building.Telephone}
-                BuildingCounty={building.county}
+                buildingOccupancy={building.maxoccupancy}
+                buildingCounty={building.county}
+                buildingPostCode={building.postcode}
                 />
           
             ))
