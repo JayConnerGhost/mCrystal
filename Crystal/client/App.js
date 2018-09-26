@@ -12,7 +12,6 @@ import ShowBuildings from './ShowBuildings';
 import NotFound from './NotFound';
 import Auth from '../imports/hoc/auth'
 
-
 class frame extends Component{
      
 

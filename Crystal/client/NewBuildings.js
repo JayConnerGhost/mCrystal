@@ -3,14 +3,16 @@ import {AutoForm} from 'uniforms-bootstrap4';
 import NewBuildingFormSchema from '../imports/schema/NewBuildingFormSchema';
 
 
+
 class NewBuildings extends Component{
     insertBuilding(data)
     {
        
-        Meteor.call('buildingsInsert',data.name, data.address1, data.address2, data.address3,data.county, data.postcode,data.occupancy,(error, response) => {
+       Meteor.call('createBuilding',data.name, data.address1, data.address2, data.address3,data.county, data.postcode,data.occupancy,(error, response) => {
 
-            alert(error);
+           alert(error);
         });
+       
     }
    
     render(){ return(
