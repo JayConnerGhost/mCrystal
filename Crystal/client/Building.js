@@ -1,21 +1,20 @@
 import React , {Component} from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 
-import Modal from 'react-overlays/lib/Modal';
-import findDOMNode from 'react-dom';
 
 class Building extends Component{
-     BuildingActivate(buildingName){
-            alert("building "+ buildingName);
-           
-            findDOMNode.render(<Modal/>, modal-mount);
-    };
+    constructor() {
+        super();
+      }
+  
 
 
     render(){
       
        return (
       
-       <div className="card" onClick={()=>this.BuildingActivate(this.props.buildingId)}>
+       <div className="card" onClick={this.props.onClick}>
        <div className="card-image"><i className="fas fa-building fa-3x"></i></div>
            <div><strong>Name: </strong>{this.props.buildingName}</div>
             <div><strong>Tel:</strong> {this.props.buildingTelephone}</div>          
