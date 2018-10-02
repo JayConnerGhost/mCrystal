@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import BuildingList from './BuildingList';
+import '../api/Buildings.js';
 
-if (Meteor.isClient) {
-    var Buildings = new Mongo.Collection('buildings');
-}
 
 
 class ShowBuildings extends TrackerReact(React.Component){
@@ -25,7 +23,7 @@ class ShowBuildings extends TrackerReact(React.Component){
 
     render()
     {
-        const buildingList = Buildings.find().fetch();
+        const buildingList = buildings.find().fetch();
         
            console.log(buildingList);
        

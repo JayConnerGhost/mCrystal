@@ -1,14 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-
-
 import { Meteor } from 'meteor/meteor';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Link, Route, Switch } from 'react-router-dom';
 
 import App from './App.js';
-
+import '../api/Buildings.js';
  
 
 Meteor.startup(() => {
@@ -21,6 +19,7 @@ Meteor.startup(() => {
 
 });
 
+<<<<<<< HEAD
 
 const modalStyle = {
   position: 'fixed',
@@ -53,3 +52,5 @@ const dialogStyle = function() {
   };
 };
 
+=======
+>>>>>>> 038973bc4473f788706661c0228322d673cb1308
