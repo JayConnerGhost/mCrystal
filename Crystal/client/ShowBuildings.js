@@ -28,7 +28,7 @@ class ShowBuildings extends TrackerReact(React.Component){
            console.log(buildingList);
        
         return( 
-           <div className="row">
+           <div className="row buildinglist" >
             <BuildingList buildings={buildingList} />
             </div>
         );
