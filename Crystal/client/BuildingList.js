@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
 import Building from './Building';
-
+import RoomList from './RoomList';
 
 const customStyles = {
     content : {
@@ -44,7 +44,40 @@ openModal() {
 
 afterOpenModal() {
   // references are now sync'd and can be accessed.
-  this.subtitle.style.color = '#f00';
+  //console.log("test")
+  if(typeof this.state.selectedBuilding.name !== 'undefined'){
+    
+  this.buildingName.innerText=this.state.selectedBuilding.name;
+  }
+  if(typeof this.state.selectedBuilding.address1 !== 'undefined'){
+    
+  this.buildingAddress1.innerText=this.state.selectedBuilding.address1
+  }
+  if(typeof this.state.selectedBuilding.address2 !== 'undefined'){
+    
+  this.buildingAddress2.innerText=this.state.selectedBuilding.address2
+  }
+  if(typeof this.state.selectedBuilding.address3 !== 'undefined'){
+    
+  this.buildingAddress3.innerText=this.state.selectedBuilding.address3
+  }
+  if(typeof this.state.selectedBuilding.county !== 'undefined'){
+  
+  this.buildingCounty.innerText=this.state.selectedBuilding.county
+  }
+  if(typeof this.state.selectedBuilding.postcode !== 'undefined'){
+   
+  this.buildingPostCode.innerText=this.state.selectedBuilding.postcode
+  }
+  if(typeof this.state.selectedBuilding.maxoccupancy !== 'undefined'){
+   
+  this.buildingMaxOccupancy.innerText=this.state.selectedBuilding.maxoccupancy
+  }
+
+  this.buildingId=this.state.selectedBuilding._id
+  
+  //ReactDOM
+  ReactDOM.render(<RoomList buildingId={this.state.selectedBuilding._id}/> , document.getElementById('roomContainer'))
 }
 
 closeModal() {
@@ -52,18 +85,13 @@ closeModal() {
 }
 
  buildingClick(buildingId){
+      var b= this.props.buildings.find(x=>x._id==buildingId);
        this.openModal();
-       this.setState({selectedBuilding: buildingId});
+       this.setState({selectedBuilding: b});
 }
 
-displayBuilding(buildingId)
-{
-    var b= this.props.buildings.find(x=>x._id==buildingId);
 
-
-    return b;
-}
-    
+  
     render()
     {
         return (
@@ -82,6 +110,7 @@ displayBuilding(buildingId)
                 />
           
             ))}
+
             <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -89,14 +118,26 @@ displayBuilding(buildingId)
           style={customStyles}
           contentLabel="Example Modal"
         >
+          <span>Name: </span>
+          <h4 ref={buildingName => this.buildingName = buildingName}></h4>
+          <span>Address1</span>
+          <h4 ref={buildingAddress1 => this.buildingAddress1 = buildingAddress1}></h4>
+          <span>Address2</span>
+          <h4 ref={buildingAddress2 => this.buildingAddress2 = buildingAddress2}></h4>
+          <span>Address3</span>
+          <h4 ref={buildingAddress3=> this.buildingAddress3 = buildingAddress3}></h4>
+          <span>County</span>
+          <h4 ref={buildingCounty => this.buildingCounty = buildingCounty}></h4>
+          <span>Max Occupancy</span>
+          <h4 ref={buildingMaxOccupancy => this.buildingMaxOccupancy = buildingMaxOccupancy}></h4>
+          <span>Postcode:</span>
+          <h4 ref={buildingPostCode => this.buildingPostCode = buildingPostCode}></h4>
+         <div id="roomContainer"></div>
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
           <button onClick={this.closeModal}>close</button>
-          <div>{this.state.selectedBuilding}
+          <div>
           
-          {      
-           this.displayBuilding(this.state.selectedBuilding)   
-          };
+        
           
           
           </div>
