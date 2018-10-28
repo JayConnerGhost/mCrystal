@@ -9,6 +9,8 @@ import Contact from './Contact';
 import Accounts from './accounts';
 import NewBuildings from './NewBuildings';
 import ShowBuildings from './ShowBuildings';
+import ShowAllRooms from './ShowAllRooms';
+import NewRoom from './NewRoom';
 import NotFound from './NotFound';
 import Auth from '../imports/hoc/auth'
 
@@ -27,8 +29,15 @@ class frame extends Component{
                         ]
 
                 },
-                {_id:5, name:'Contact',urlPart:'/contact', parent:0, children:[]},
-                {_id:6, name:'About',urlPart:'/about', parent:0, children:[]}
+                {_id:5, name:'Rooms',urlPart:'/rooms',parent:0,
+                    children:[
+                        {_id:6, name:'New Room',urlPart:'/rooms/new',parent:2},
+                        {_id:7, name:'Show Room',urlPart:'/rooms/show',parent:2}
+                        ]
+
+                },
+                {_id:8, name:'Contact',urlPart:'/contact', parent:0, children:[]},
+                {_id:9, name:'About',urlPart:'/about', parent:0, children:[]}
                
             ]
         );
@@ -72,8 +81,8 @@ class frame extends Component{
                    <Route exact={true} path="/" component={Home}/>
                    <Route exact={true} path="/about" component={About}/>
                    <Route exact={true} path="/contact" component={Contact}/>
-                   <Route exect={true} path="/buildings/new" component={Auth(NewBuildings)}/>
-                   <Route exect={true} path="/buildings/show" component={Auth(ShowBuildings)}/>
+                   <Route exect={true} path="/rooms/new" component={Auth(NewRoom)}/>
+                   <Route exect={true} path="/rooms/show" component={Auth(ShowAllRooms)}/>
                    <Route component={NotFound}/>
                  
             </Switch>

@@ -10,7 +10,7 @@ componentDidMount(){
 }
 
     render(){
-        return (<h2>rooms {this.props.buildingId}</h2>);
+        return (<h4>rooms {this.props.buildingId}</h4>);
     }
 }
 
