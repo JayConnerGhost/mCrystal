@@ -81,6 +81,8 @@ class frame extends Component{
                    <Route exact={true} path="/" component={Home}/>
                    <Route exact={true} path="/about" component={About}/>
                    <Route exact={true} path="/contact" component={Contact}/>
+                   <Route exect={true} path="/buildings/new" component={Auth(NewBuildings)}/>
+                   <Route exect={true} path="/buildings/show" component={Auth(ShowBuildings)}/>
                    <Route exect={true} path="/rooms/new" component={Auth(NewRoom)}/>
                    <Route exect={true} path="/rooms/show" component={Auth(ShowAllRooms)}/>
                    <Route component={NotFound}/>
